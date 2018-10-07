@@ -43,7 +43,7 @@ class BottomNavigationBar extends React.Component {
         <NavLink to="/records">
           <BottomNavigationAction label="Records" icon={<RecordIcon />} />
         </NavLink>
-        <BottomNavigationAction disabled label="Account" icon={<PersonIcon />} />
+        {/* <BottomNavigationAction disabled label="Account" icon={<PersonIcon />} /> */}
       </BottomNavigation>
     );
   }
