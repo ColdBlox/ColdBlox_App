@@ -27,19 +27,41 @@ function ProfileCard(props) {
     <Grid container justify = "center">
       <Card className={classes.card}>
         <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            alt="PLACEHOLDER"
-            title="Contemplative Reptile"
-          />
           <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
-              Lizard
-            </Typography>
-            <Typography component="p">
-              Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-              across all continents except Antarctica
-            </Typography>
+            <Grid item xs={12}>
+              <Typography gutterBottom variant="body2" component="h2">
+                Company Represented
+              </Typography>
+              <Typography variant="headline">
+                MB Transportation
+              </Typography>
+            </Grid>
+            <hr />
+            <Grid item xs={12}>
+              <Typography gutterBottom variant="body2" component="h2">
+                Name
+              </Typography>
+              <Typography variant="headline">
+                Julian Hans Khanovic
+              </Typography>
+            </Grid>
+            <hr />
+            <Grid item xs={6}>
+              <Typography gutterBottom variant="body2" component="small">
+                Ongoing Trips
+              </Typography>
+              <Typography component="small">
+                12
+              </Typography>
+            </Grid>
+            <Grid item xs={6}>
+              <Typography gutterBottom variant="body2" component="small">
+                Certification Ratio
+              </Typography>
+              <Typography component="small">
+                0.998
+              </Typography>
+            </Grid>
           </CardContent>
         </CardActionArea>
         <CardActions>
