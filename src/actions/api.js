@@ -3,7 +3,7 @@ import {
 } from 'ontology-dapi';
 
 client.registerClient({});
-const article_id = '01'
+const article_id = '02'
 const data = {
     temp: [38, 40, 41, 37, 38, 40, 40, 39, 41, 43, 46, 40]
 }
@@ -29,8 +29,7 @@ export async function getReadings() {
         parameters
     });
 
-    console.log(JSON.parse(hex2a(result)))
-
+    return JSON.parse(hex2a(result))
 }
 
 export async function putReadings() {

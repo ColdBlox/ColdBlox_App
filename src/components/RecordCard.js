@@ -9,10 +9,11 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {Line} from 'react-chartjs-2';
 
 const styles = {
   card: {
-    maxWidth: 345,
+    width: '90%',
     marginTop: '20px',
 
   },
@@ -22,7 +23,42 @@ const styles = {
 };
 
 function RecordCard(props) {
-  const { classes } = props;
+
+  const { classes, data } = props;
+
+  console.log(data)
+
+  const lineData = {
+    labels: ['0', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50', '55'],
+    datasets: [
+      {
+        label: 'Temperature Graph',
+        fill: false,
+        lineTension: 0.1,
+        backgroundColor: 'rgba(75,192,192,0.4)',
+        borderColor: 'rgba(75,192,192,1)',
+        borderCapStyle: 'butt',
+        borderDash: [],
+        borderDashOffset: 0.0,
+        borderJoinStyle: 'miter',
+        pointBorderColor: 'rgba(75,192,192,1)',
+        pointBackgroundColor: '#fff',
+        pointBorderWidth: 1,
+        pointHoverRadius: 5,
+        pointHoverBackgroundColor: 'rgba(75,192,192,1)',
+        pointHoverBorderColor: 'rgba(220,220,220,1)',
+        pointHoverBorderWidth: 2,
+        pointRadius: 1,
+        pointHitRadius: 10,
+        data
+      }
+    ]
+  };
+
+  if (!data) {
+    return <div></div>
+  }
+
   return (
     <Grid container justify = "center">
       <Card className={classes.card}>
@@ -46,31 +82,12 @@ function RecordCard(props) {
               </Typography>
             </Grid>
             <hr />
-            <Grid item xs={6}>
-              <Typography gutterBottom variant="body2" component="small">
-                Ongoing Trips
-              </Typography>
-              <Typography component="small">
-                12
-              </Typography>
-            </Grid>
-            <Grid item xs={6}>
-              <Typography gutterBottom variant="body2" component="small">
-                Certification Ratio
-              </Typography>
-              <Typography component="small">
-                0.998
-              </Typography>
+            <Grid item xs={12}>
+              <Line data={lineData} />
             </Grid>
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
         </CardActions>
       </Card>
     </Grid>

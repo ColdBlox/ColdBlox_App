@@ -9,12 +9,13 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import {putReadings} from '../actions/api'
 
 const styles = {
   card: {
-    maxWidth: 345,
+    width: '90%',
     marginTop: '20px',
-
+    justify: 'center'
   },
   media: {
     height: 140,
@@ -65,12 +66,9 @@ function ProfileCard(props) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
-            Share
-          </Button>
-          <Button size="small" color="primary">
-            Learn More
-          </Button>
+          <Button variant='contained' color="primary" className={classes.button} onClick={putReadings}>
+            Start Recording
+          </Button> 
         </CardActions>
       </Card>
     </Grid>
