@@ -8,18 +8,18 @@ const styles = {
   root: {},
 };
 
-function HomePage(props) {
+function RecordsPage(props) {
   const { classes } = props;
   return (
     <div className={classes.root}>
-      <TopNavBar pageTitle={'Dashboard'} />
+      <TopNavBar pageTitle={'Records'} />
       <ProfileCard />
     </div>
   );
 }
 
-HomePage.propTypes = {
+RecordsPage.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(HomePage);
+export default withStyles(styles)(RecordsPage);
