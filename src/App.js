@@ -5,7 +5,7 @@ import {
   Link
 } from 'react-router-dom'
 import HomePage from './containers/HomePage'
-// import BottomNavigation from './components/BottomNavigation'
+import BottomNavigationBar from './components/BottomNavigationBar'
 
 const Home = () => (
   <div>
@@ -32,8 +32,9 @@ const BasicExample = () => (
 
       <Route exact path="/" component={Home}/>
       <Route path="/records" component={About}/>
+      <BottomNavigationBar />
     </div>
-    <BottomNavigation />
+
   </Router>
 )
 export default BasicExample
