@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -36,8 +37,12 @@ class BottomNavigationBar extends React.Component {
         showLabels
         className={classes.root}
       >
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Records" icon={<RecordIcon />} />
+        <NavLink to="/">
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+        </NavLink>
+        <NavLink to="/records">
+          <BottomNavigationAction label="Records" icon={<RecordIcon />} />
+        </NavLink>
         <BottomNavigationAction disabled label="Account" icon={<PersonIcon />} />
       </BottomNavigation>
     );
