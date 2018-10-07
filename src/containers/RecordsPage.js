@@ -13,7 +13,7 @@ function RecordsPage(props) {
   return (
     <div className={classes.root}>
       <TopNavBar pageTitle={'Records'} />
-      <ProfileCard />
+      <RecordCard />
     </div>
   );
 }
